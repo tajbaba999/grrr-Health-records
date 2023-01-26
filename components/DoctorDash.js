@@ -1,7 +1,37 @@
 import React, { useEffect, useState } from 'react'
 import MainComp from './MainComp'
+import doctor from '../record';
 
 const DoctorDash = () => {
+  
+    // const addr = props.query.address;
+    // const accounts = await web3.eth.getAccounts();
+    // var doctor, profilePic;
+const [fname, setfname] = useState('');
+    try {
+        // doctor = await record.methods.searchDoctor(addr).call({from: accounts[0]});
+        // profilePic = (doctor[3] == 'Male') ? 'https://cdn-icons-png.flaticon.com/128/387/387561.png' : 'https://cdn-icons-png.flaticon.com/128/387/387569.png';
+        // await doctor.methods.setDoctor(fname,lname,dob,phone,qualification,speciality).send({from:accounts[0]});
+        // const doctorInfo = await doctor.methods.getDoctor().call()({from:accounts[0]});
+        useEffect(()=>{
+          async function fetchData(){
+      const accounts = await window.ethereum.enable();
+
+        const doctorInfo = await doctor.methods.getDoctor().call();
+            setfname(doctorInfo[0]);
+
+          }
+          fetchData();
+        },[]);
+       
+
+}catch(error){
+     alert("cannot set fname")
+}
+
+
+
+
   const [num, setNum] = useState(0);
 
   const clickTime = () => {
@@ -75,7 +105,7 @@ const DoctorDash = () => {
                 <h2
                   class="font-medium text-xs md:text-sm text-center text-blue-500"
                 >
-                  Dr.XXX
+                  {fname}
                 </h2>
                 <p class="text-xs text-gray-500 text-center">Doctor</p>
               </div>
@@ -214,5 +244,6 @@ const DoctorDash = () => {
   </>
   )
 }
+
 
 export default DoctorDash

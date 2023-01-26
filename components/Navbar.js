@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <div className="p-2 text-md">
           <Link href="/choice" as="/DoctorOrPatient"><button className="btn-log">Log In &gt;</button></Link>
-
+            
         </div>
       </div>
     </nav >

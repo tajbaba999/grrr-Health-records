@@ -1,34 +1,34 @@
 import Link from "next/link"
 import React,{ useState } from "react";
 import doctor from '../record';
-const DoctorForm = () => {
+const PatientForm = () => {
         const [fname, setfname] = useState('');
         const [lname, setlname] = useState('');
         const [dob, setdob] = useState('');
         const [phone, setphone] = useState('');
-        const [qualification, setqualification] = useState('');
-        const [speciality, setspeciality] = useState('');
+        const [description, setdescription] = useState('');
+        const [allergy, setallergy] = useState('');
         const handleSubmit = async(e) => {
             e.preventDefault();
             try {
                 const accounts = await window.ethereum.enable();
-                await doctor.methods.setDoctor(fname,lname,dob,phone,qualification,speciality).send({from:accounts[0]});
-                alert("Doctor created successfully");
+                await doctor.methods.setPatient(fname,lname,dob,phone,description,allergy).send({from:accounts[0]});
+                alert("Patient created successfully");
             } catch (error) {
-                alert("Could not add doctor");
+                alert("Could not add patient");
                 
             }
         }
 
-   const handledoctor = async() =>{
+   const handlepatient = async() =>{
     try {
-        const doctorInfo = await doctor.methods.getDoctor().call();
-        console.log("Doctor fname:" +doctorInfo[0]);
-        console.log("Doctor lname:" +doctorInfo[1]);
-        console.log("Doctor dob:" +doctorInfo[2]);
-        console.log("Doctor phone:" +doctorInfo[3]);
-        console.log("Doctor qualification:" +doctorInfo[4]);
-        console.log("Doctor speciality:" +doctorInfo[5]);
+        const patientInfo = await doctor.methods.getPatient().call();
+        console.log("Patient fname:" +patientInfo[0]);
+        console.log("Patient lname:" +patientInfo[1]);
+        console.log("Patient dob:" +patientInfo[2]);
+        console.log("Patient phone:" +patientInfo[3]);
+        console.log("Patient description:" +patientInfo[4]);
+        console.log("Patient allergy:" +patientInfo[5]);
         
     } catch (error) {
         console.log(error);
@@ -39,8 +39,7 @@ const DoctorForm = () => {
 
     return (
         <>
-            
-            <div className="text-center text-xl mt-10 font-medium text-[#07074D]">Doctor Sign Up</div>
+            <div className="text-center text-xl mt-10 font-medium text-[#07074D]">Patient Sign Up</div>
             <Link href="/doctordash" as="/DoctorDash">
             <button className="text-center text-xl mt-10 font-medium text-[#07074D">Goto</button>
             </Link>
@@ -139,14 +138,14 @@ const DoctorForm = () => {
                                         for="fName"
                                         class="mb-3 block text-base font-medium text-[#07074D]"
                                     >
-                                        Specialty
+                                        Description
                                     </label>
                                     <input
                                         type="text"
                                         name="spc"
                                         id="spc"
-                                        value={speciality}
-                                        onChange={e => setspeciality(e.target.value)}
+                                        value={description}
+                                        onChange={e => setdescription(e.target.value)}
                                         placeholder="Specialty"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
@@ -158,14 +157,14 @@ const DoctorForm = () => {
                                         for="qual"
                                         class="mb-3 block text-base font-medium text-[#07074D]"
                                     >
-                                        Qualification
+                                        Allergy
                                     </label>
                                     <input
                                         type="text"
                                         name="qual"
                                         id="qual"
-                                        value={qualification}
-                                        onChange={e => setqualification(e.target.value)}
+                                        value={allergy}
+                                        onChange={e => setallergy(e.target.value)}
                                         placeholder="Last Name"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
@@ -244,10 +243,10 @@ const DoctorForm = () => {
                         </div>
                     
                     </form>
-                    <button onClick={handledoctor}
+                    <button onClick={handlepatient}
                                     class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
                                 >
-                                    Get Doctor
+                                    Get Patient
                                 </button>
                 </div>
             </div>
@@ -255,4 +254,4 @@ const DoctorForm = () => {
     )
 }
 
-export default DoctorForm
+export default PatientForm

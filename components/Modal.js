@@ -13,7 +13,7 @@ const Modal = () => {
                             <div className="text-lg">Doctor</div>
                         </div>
                     </Link>
-                    <Link href="/doctorsign" as="/Doctor">
+                    <Link href="/patientsign" as="/Patient">
                         <div className="transform transition-transform duration-400 ease-in-out hover:scale-90 text-center">
                             <img className="w-32 mx-auto rounded-full mt-10 border-8 border-white" src="/patient-color.png" alt="Profile Pic" />
                             <div className="text-lg">Patient</div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import FindPatient from './FindPatient'
 import Patients from './Patients'
 import TimeLine from './TimeLine'
 
@@ -9,6 +10,9 @@ const MainComp = (props) => {
     }
     else if(props.num == 1){
         return <Patients />
+    }
+    else if(props.num == 2){
+        return <FindPatient />
     }
     return <TimeLine />
 }

@@ -12,6 +12,21 @@ const DoctorDash = () => {
     setNum(1);
   }
 
+  const clickAddPat = () => {
+    setNum(2);
+  }
+
+  const navTruClick = () => {
+    {
+      sidenav: true
+    }
+  }
+
+  const navFalseClick = () => {
+    {
+      sidenav: false
+    }
+  }
   
   return (<>
     <div className='inline font-poppins antialiased'>
@@ -121,7 +136,7 @@ const DoctorDash = () => {
                 <span class="">Messages</span>
               </button>
               <button
-                href=""
+                onClick={clickAddPat}
                 class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-blue-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
               >
                 <svg
@@ -136,7 +151,7 @@ const DoctorDash = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="">Calendar</span>
+                <span class="">Add Patient</span>
               </button>
               <button
                 onClick={clickTime}

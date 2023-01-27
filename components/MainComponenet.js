@@ -23,6 +23,7 @@
 
 // export default MainComp
 import React from 'react'
+import ElseCard from './ElseCard'
 import GivePermissionCard from './GivePermissionCard'
 // import FindPatient from './FindPatient'
 // import PatientCard from './PatientCard'
@@ -31,7 +32,7 @@ import GivePermissionCard from './GivePermissionCard'
 
 const MainComponent = (props) => {
 
-    if(props.num == 1){
+    if(props.nums == 1){
         return <GivePermissionCard />
     }
     // else if(props.num == 1){
@@ -40,7 +41,7 @@ const MainComponent = (props) => {
     // else if(props.num == 2){
     //     return <FindPatient />
     // }
-    return <TimeLine />
+    return <ElseCard />
 }
 
 export default MainComponent

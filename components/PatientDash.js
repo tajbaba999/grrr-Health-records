@@ -515,6 +515,7 @@
 import React, { useEffect, useState } from 'react'
 import MainComponent from './MainComp'
 import doctor from '../record';
+// import GivePermissionCard from './GivePermissionCard';
 // import { useRouter } from 'next/router'
 const PatientDash = () => {
   // const router = useRouter();
@@ -546,19 +547,19 @@ try {
 
 
 
-  const [num, setNum] = useState(0);
+  const [nums, setNums] = useState(0);
 
 //   const clickTime1 = () => {
 //     setNum(0);
 //   }
 
-//   const clickPatients1 = () => {
-//     setNum(1);
-//   }
-
-  const clickAddPat1 = () => {
-    setNum(1);
+  const clickPatients1 = () => {
+    setNums(1);
   }
+
+//   const clickAddPat1 = () => {
+//     setNums(1);
+//   }
 
   const navTruClick = () => {
     {
@@ -680,7 +681,8 @@ try {
                 <span class="">Messages</span>
               </button>
               <button
-                onClick={clickAddPat1}
+                onClick={clickPatients1}
+            
                 class="text-sm font-medium text-gray-700 py-2 px-2 hover:bg-blue-500 hover:text-white hover:scale-105 rounded-md transition duration-150 ease-in-out"
               >
                 <svg
@@ -751,7 +753,7 @@ try {
           </div>
         </div>
         {/* Main */}
-        <MainComponent num={num} />
+        <MainComponent nums={nums} />
       </div>
     </div>
     

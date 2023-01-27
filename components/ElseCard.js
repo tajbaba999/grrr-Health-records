@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TimeLine = () => {
+const ElseCard = () => {
   return (
     <ol className='ml-20 mt-20'>
                 <li class="border-l-2 border-blue-600">
@@ -56,4 +56,4 @@ const TimeLine = () => {
   )
 }
 
-export default TimeLine
+export default ElseCard

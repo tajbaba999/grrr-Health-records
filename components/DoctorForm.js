@@ -290,7 +290,9 @@ const DoctorForm = () => {
         console.log("Doctor phone:" +doctorInfo[3]);
         console.log("Doctor qualification:" +doctorInfo[4]);
         console.log("Doctor speciality:" +doctorInfo[5]);
-        
+        console.log(accounts[0]);
+        console.log(accounts[0]);
+
     } catch (error) {
         console.log(error);
         alert("error in getting doctor information");

@@ -317,6 +317,9 @@ const PatientForm = () => {
         console.log("Patient phone:" +patientInfo[3]);
         console.log("Patient description:" +patientInfo[4]);
         console.log("Patient allergy:" +patientInfo[5]);
+        console.log(typeof(accounts[0]));
+        console.log(accounts[0]);
+
         
     } catch (error) {
         console.log(error);
@@ -328,7 +331,7 @@ const PatientForm = () => {
     return (
         <>
             <div className="text-center text-xl mt-10 font-medium text-[#07074D]">Patient Sign Up</div>
-            <Link href="/doctordash" as="/DoctorDash">
+            <Link href="/patientdash" as="/PatientDash">
             <button className="text-center text-xl mt-10 font-medium text-[#07074D">Goto</button>
             </Link>
             <div class="flex items-center justify-center p-12">

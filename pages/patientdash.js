@@ -1,11 +1,11 @@
 // import DoctorDash from '@/components/DoctorDash'
-// import PatientDash from '@/components/PatientDash'
-// import React from 'react'
+import PatientDash from '@/components/PatientDash'
+import React from 'react'
 
-// const patientdash = () => {
-//   return (
-//     <PatientDash />
-//   )
-// }
+const patientdash = () => {
+  return (
+    <PatientDash />
+  )
+}
 
-// export default patientdash
+export default patientdash

@@ -9,13 +9,13 @@ if (window.ethereum) {
     await window.ethereum.enable();
   } catch (error) {
     console.log(error);
-    web3 = new Web3(new Web3.providers.HttpProvider('https://goerli.infura.io/v3/b98f73314a454085bc23f5820e9252f9'));
+    web3 = new Web3(new Web3.providers.HttpProvider('https://goerli.infura.io/v3/b1a0254328ed4ce2bfe43e2ac9064473'));
   }
 } else {
-  web3 = new Web3(new Web3.providers.HttpProvider('https://goerli.infura.io/v3/b98f73314a454085bc23f5820e9252f9'));
+  web3 = new Web3(new Web3.providers.HttpProvider('https://goerli.infura.io/v3/b1a0254328ed4ce2bfe43e2ac9064473'));
 }
 
-const contractAddress = '0xC55227B5cE0E024D78b62dB10691Da5b547AC7e1';
+const contractAddress = '0xc20bd578439aD604704D89Ce4496c3698ADCE81D';
 const doctor = new web3.eth.Contract(contractAbi, contractAddress);
 
 export default doctor;

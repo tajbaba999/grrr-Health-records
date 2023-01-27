@@ -17,7 +17,14 @@ const Navbar = () => {
           <span className="mr-8 hidden md:inline link">Socials</span>
         </div>
         <div className="p-2 text-md">
-          <Link href="/choice" as="/DoctorOrPatient"><button className="btn-log">Log In &gt;</button></Link>
+          <Link href="/choice" as="/DoctorOrPatient">
+            
+            
+            
+            <button className="btn-log">Log In </button>
+            
+            
+            </Link>
             
         </div>
       </div>

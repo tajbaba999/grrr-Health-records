@@ -10,18 +10,32 @@ const PatientForm = () => {
         const [allergy, setallergy] = useState('');
         const handleSubmit = async(e) => {
             e.preventDefault();
+            // try {
+            //     //
+            //     // const addr = props.query.address;
+            //     // const accounts = await window.ethereum.enable();
+            //     const accounts = await window.ethereum.request({method:'eth_requests'});
+
+            //     await doctor.methods.setPatient(fname,lname,dob,phone,description,allergy).send({from:accounts[0]});
+            //     alert("Patient created successfully");
+            // } catch (error) {
+            //     alert("Could not add patient");
+                
+            // }
             try {
                 const accounts = await window.ethereum.enable();
                 await doctor.methods.setPatient(fname,lname,dob,phone,description,allergy).send({from:accounts[0]});
                 alert("Patient created successfully");
             } catch (error) {
-                alert("Could not add patient");
+                alert("Could not add Patient");
                 
             }
         }
 
    const handlepatient = async() =>{
     try {
+        // const addr = props.query.address;
+
         const patientInfo = await doctor.methods.getPatient().call();
         console.log("Patient fname:" +patientInfo[0]);
         console.log("Patient lname:" +patientInfo[1]);
@@ -32,7 +46,7 @@ const PatientForm = () => {
         
     } catch (error) {
         console.log(error);
-        alert("error in getting doctor information");
+        alert("error in getting patient information");
     }
    }
 
@@ -104,6 +118,7 @@ const PatientForm = () => {
                                             id="date"
                                             value={dob}
                                         onChange={e => setdob(e.target.value)}
+                                        placeholder="01/01/2000"
                                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                         />
                                     </div>
@@ -146,7 +161,7 @@ const PatientForm = () => {
                                         id="spc"
                                         value={description}
                                         onChange={e => setdescription(e.target.value)}
-                                        placeholder="Specialty"
+                                        placeholder="about problem"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
                                 </div>
@@ -165,7 +180,7 @@ const PatientForm = () => {
                                         id="qual"
                                         value={allergy}
                                         onChange={e => setallergy(e.target.value)}
-                                        placeholder="Last Name"
+                                        placeholder="ex..paracetomal"
                                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                                     />
                                 </div>

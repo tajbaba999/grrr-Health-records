@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import MainComp from './MainComp'
 import doctor from '../record';
-
+import { useRouter } from 'next/router'
 const DoctorDash = () => {
-  
-    // const addr = props.query.address;
+  // const router = useRouter();
+  //   const addr = router.query.address;
     // const accounts = await web3.eth.getAccounts();
-    // var doctor, profilePic;
-const [fname, setfname] = useState('');
-    try {
-        // doctor = await record.methods.searchDoctor(addr).call({from: accounts[0]});
-        // profilePic = (doctor[3] == 'Male') ? 'https://cdn-icons-png.flaticon.com/128/387/387561.png' : 'https://cdn-icons-png.flaticon.com/128/387/387569.png';
-        // await doctor.methods.setDoctor(fname,lname,dob,phone,qualification,speciality).send({from:accounts[0]});
-        // const doctorInfo = await doctor.methods.getDoctor().call()({from:accounts[0]});
-        useEffect(()=>{
-          async function fetchData(){
-      const accounts = await window.ethereum.enable();
+//     // var doctor, profilePic;
+// const [fname, setfname] = useState('');
+//     try {
+//         // doctor = await record.methods.searchDoctor(addr).call({from: accounts[0]});
+//         // profilePic = (doctor[3] == 'Male') ? 'https://cdn-icons-png.flaticon.com/128/387/387561.png' : 'https://cdn-icons-png.flaticon.com/128/387/387569.png';
+//         // await doctor.methods.setDoctor(fname,lname,dob,phone,qualification,speciality).send({from:accounts[0]});
+//         // const doctorInfo = await doctor.methods.getDoctor().call()({from:accounts[0]});
+//         useEffect(()=>{
+//           async function fetchData(){
+//       const accounts = await window.ethereum.enable();
 
-        const doctorInfo = await doctor.methods.getDoctor().call();
-            setfname(doctorInfo[0]);
+//         const doctorInfo = await doctor.methods.getDoctor().call();
+//             setfname(doctorInfo[0]);
 
-          }
-          fetchData();
-        },[]);
+//           }
+//           fetchData();
+//         },[]);
        
 
-}catch(error){
-     alert("cannot set fname")
-}
+// }catch(error){
+//      alert("cannot set fname")
+// }
 
 
 
@@ -97,7 +97,7 @@ const [fname, setfname] = useState('');
             </h1>
             <div id="profile" class="space-y-3">
               <img
-                src="https://pbs.twimg.com/profile_images/1467997254929854470/mDYbXoVl_400x400.jpg"
+                src="https://cdn-icons-png.flaticon.com/128/387/387561.png"
                 alt="Avatar user"
                 class="w-10 md:w-16 rounded-full mx-auto"
               />
@@ -105,7 +105,7 @@ const [fname, setfname] = useState('');
                 <h2
                   class="font-medium text-xs md:text-sm text-center text-blue-500"
                 >
-                  {fname}
+                      Dr...
                 </h2>
                 <p class="text-xs text-gray-500 text-center">Doctor</p>
               </div>
@@ -181,7 +181,7 @@ const [fname, setfname] = useState('');
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="">Add Patient</span>
+                <span class="">Search Patient Record</span>
               </button>
               <button
                 onClick={clickTime}

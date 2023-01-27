@@ -1,5 +1,5 @@
 import React from 'react'
-
+// import { useRouter } from 'next/router';
 const PatientCard = () => {
   return (
     <div className="card w-72 mx-auto bg-white border rounded shadow hover:shadow-xl">

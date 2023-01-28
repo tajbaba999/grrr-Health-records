@@ -15,7 +15,7 @@ if (window.ethereum) {
   web3 = new Web3(new Web3.providers.HttpProvider('https://goerli.infura.io/v3/b1a0254328ed4ce2bfe43e2ac9064473'));
 }
 
-const contractAddress = '0xFc5ff1c13705Ea463AC04EbD967424284D0BEccC';
+const contractAddress = '0x82Cb68A02fc7e64b29926903023055329603d526';
 const doctor = new web3.eth.Contract(contractAbi, contractAddress);
 
 export default doctor;

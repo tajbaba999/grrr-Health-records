@@ -523,6 +523,11 @@ const PatientDash = () => {
     // const accounts = await web3.eth.getAccounts();
 //     // var doctor, profilePic;
 const [fname, setfname] = useState('');
+const [lname, setlname] = useState('');
+const [dob, setdob] = useState('');
+const [phone, setphone] = useState('');
+const [description, setdescription] = useState('');
+const [allergies, setallergies] = useState('');
 try {
   //         // doctor = await record.methods.searchDoctor(addr).call({from: accounts[0]});
   //         // profilePic = (doctor[3] == 'Male') ? 'https://cdn-icons-png.flaticon.com/128/387/387561.png' : 'https://cdn-icons-png.flaticon.com/128/387/387569.png';
@@ -534,6 +539,12 @@ try {
           const addr=accounts[0];
           const patientInfo = await doctor.methods.getPatient(addr).call({from:accounts[0]});
               setfname(patientInfo[0]);
+              setlname(patientInfo[1]);
+              setdob(patientInfo[2]);
+              setphone(patientInfo[3])
+              setdescription(patientInfo[4]);
+              setallergies(patientInfo[5]);
+
   
             }
             fetchData();
@@ -548,6 +559,7 @@ try {
 
 
   const [nums, setNums] = useState(0);
+
 
 //   const clickTime1 = () => {
 //     setNum(0);
@@ -617,12 +629,41 @@ try {
                 class="w-10 md:w-16 rounded-full mx-auto"
               />
               <div>
+              <p class="text-xs text-gray-500 text-center">Patient:</p>
+
                 <h2
                   class="font-medium text-xs md:text-sm text-center text-blue-500"
                 >
-                      {fname}
+                      {fname} {lname}
                 </h2>
-                <p class="text-xs text-gray-500 text-center">Patient</p>
+<p class="text-xs text-gray-500 text-center">DOB:</p>
+
+<h2
+  class="font-medium text-xs md:text-sm text-center text-blue-500"
+>
+      {dob}
+</h2>
+<p class="text-xs text-gray-500 text-center">Phone:</p>
+
+<h2
+  class="font-medium text-xs md:text-sm text-center text-blue-500"
+>
+      {phone}
+</h2>
+<p class="text-xs text-gray-500 text-center">Description:</p>
+
+<h2
+  class="font-medium text-xs md:text-sm text-center text-blue-500"
+>
+      {description}
+</h2>
+<p class="text-xs text-gray-500 text-center">Allergies:</p>
+
+<h2
+  class="font-medium text-xs md:text-sm text-center text-blue-500"
+>
+      {allergies}
+</h2>
               </div>
             </div>
             

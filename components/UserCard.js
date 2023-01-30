@@ -9,6 +9,7 @@ const UserCard = () => {
                 <p>
                     Front end Developer, avid reader. Love to take a long walk, swim
                 </p>
+                
             </div>
             <hr class="mt-8" />
             <div class="flex p-4">

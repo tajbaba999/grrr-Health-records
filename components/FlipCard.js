@@ -14,7 +14,7 @@ const FlipCard = (props) => {
                         <div class="flex min-h-full flex-col items-center justify-center">
                             <h1 class="text-3xl font-bold">{props.title}</h1>
                             <p class="text-lg">Decentralised</p>
-                            <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <p class="text-base">Decentralized system in which power or authority is distributed among multiple individuals or entities, rather than being centralized.</p>
                         </div>
                     </div>
                 </div>

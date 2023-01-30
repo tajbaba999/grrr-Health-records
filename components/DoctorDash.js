@@ -250,7 +250,11 @@
 import React, { useEffect, useState } from 'react'
 import MainComp from './MainComp'
 import doctor from '../record';
+// import '@material-ui/core/styles';
+
 // import { useRouter } from 'next/router'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faSearch } from '@fortawesome/free-solid-svg-icons'
 const DoctorDash = () => {
   // const router = useRouter();
   //   const addr = router.query.address;
@@ -342,7 +346,7 @@ try {
               M<span class="text-blue-600">.</span>
             </h1>
             <h1 class="hidden md:block font-bold text-sm md:text-xl text-center">
-              MedPlus<span class="text-blue-600">.</span>
+              Health-Record <span class="text-blue-600">.</span>
             </h1>
             <div id="profile" class="space-y-3">
               <img
@@ -430,7 +434,7 @@ try {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="">Search Patient Record</span>
+                <span class="">search Patient Record</span>
               </button>
               <button
                 onClick={clickTime}
